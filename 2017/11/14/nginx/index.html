@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        Docker容器技术的基本用法｜Wangwh&#39;s blog
+        Nginx配置｜Wangwh&#39;s blog
         
     </title>
 
-    <link rel="canonical" href="http://haojen.github.io/2017/11/14/docker/">
+    <link rel="canonical" href="http://haojen.github.io/2017/11/14/nginx/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -137,7 +137,7 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
-                    <h1>Docker容器技术的基本用法</h1>
+                    <h1>Nginx配置</h1>
                     
                     <span class="meta">
                          作者 Bill Wang
@@ -157,7 +157,7 @@
     </div>
     <div class="post-title-haojen">
         <span>
-            Docker容器技术的基本用法
+            Nginx配置
         </span>
     </div>
 </header>
@@ -168,33 +168,17 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <h1 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h1><p>###Docker容器技术：</p>
-<ul>
-<li><strong>隔离软件程序运行环境</strong></li>
-<li><strong>基于linux底层的容器技术</strong></li>
-<li><strong>快速伸缩，响应及时</strong></li>
-<li><strong>轻量级</strong></li>
-<li><strong>便捷的脚本生成策略</strong></li>
-</ul>
-<hr>
-<h2 id="Docker基本命令"><a href="#Docker基本命令" class="headerlink" title="Docker基本命令"></a>Docker基本命令</h2><p>docker基本命令，例如：</p>
-<h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#启动</span></span><br><span class="line">docker run -it </span><br><span class="line"><span class="comment">#查询历史曾运行容器</span></span><br><span class="line">docker ps -a</span><br><span class="line"><span class="comment">#停止容器</span></span><br><span class="line">docker stop e7e</span><br><span class="line"><span class="comment">#启动容器</span></span><br><span class="line">docker start e7e</span><br></pre></td></tr></table></figure>
-<p>###其他命令<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">###追加8080-&gt;80 的映射</span></span><br><span class="line">docker inspect `container_name` | grep IPAddress</span><br><span class="line">iptables -t nat -A  DOCKER -p tcp --dport <span class="number">8080</span> -j DNAT --to-destination <span class="number">172.17</span><span class="number">.0</span><span class="number">.2</span>:<span class="number">80</span>  </span><br><span class="line"></span><br><span class="line"><span class="comment">###启动大屏镜像，绑定虚拟目录到/home/node/data-visualization目录下</span></span><br><span class="line">docker run --rm -it -p <span class="number">3000</span>:<span class="number">3000</span> -p <span class="number">8080</span>:<span class="number">80</span>  --name nodedata -v  /home/node/data-visualization:/home/node/data-visualization -w /home/node/data-visualization node npm start</span><br><span class="line"></span><br><span class="line">docker run -d -it -p <span class="number">3000</span>:<span class="number">3000</span> -p <span class="number">8080</span>:<span class="number">80</span>  --name nodedata -v  /home/node/data-visualization:/home/node/data-visualization -w /home/node/data-visualization node npm start</span><br><span class="line"><span class="comment">#启动Docker镜像</span></span><br><span class="line">docker run --rm -d -p <span class="number">8080</span>:<span class="number">8080</span> tomcat:<span class="number">7</span></span><br><span class="line">docker run -it -p <span class="number">8080</span>:<span class="number">80</span>  d84</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#提交新版本，作者</span></span><br><span class="line">docker commit -m=<span class="string">'nginx and bigdata image /home/node/data-visualization'</span>--author=<span class="string">'wangwh'</span> <span class="number">639</span> nginx/bdata</span><br></pre></td></tr></table></figure></p>
+                <p>Nginx基本配置–模板<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">#user  nobody;</span></span><br><span class="line"><span class="comment">#运行用户</span></span><br><span class="line">user nginx nginx;</span><br><span class="line"><span class="comment">#启动进程</span></span><br><span class="line">worker_processes  <span class="number">2</span>;</span><br><span class="line"><span class="comment">#全局错误日志及PID文件</span></span><br><span class="line"><span class="comment">#error_log  logs/error.log;</span></span><br><span class="line"><span class="comment">#error_log  logs/error.log  notice;</span></span><br><span class="line"><span class="comment">#error_log  logs/error.log  info;</span></span><br><span class="line"></span><br><span class="line">error_log  logs/error.log  notice;</span><br><span class="line">pid        logs/nginx.pid;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#pid        logs/nginx.pid;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">events &#123;</span><br><span class="line">    worker_connections  <span class="number">1024</span>;<span class="comment">#所以nginx支持的总连接数就等于worker_processes * worker_connections </span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">http &#123;</span><br><span class="line">    include       mime.types;<span class="comment">#这个是说nginx支持哪些多媒体类型，可以到conf/mime.types查看支持哪些多媒体 </span></span><br><span class="line">    default_type  application/octet-stream;<span class="comment">#默认的数据类型 </span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '</span></span><br><span class="line">    <span class="comment">#                  '$status $body_bytes_sent "$http_referer" '</span></span><br><span class="line">    <span class="comment">#                  '"$http_user_agent" "$http_x_forwarded_for"';</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#access_log  logs/access.log  main;</span></span><br><span class="line"></span><br><span class="line">    sendfile        on;</span><br><span class="line">    <span class="comment">#tcp_nopush     on;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#keepalive_timeout  0;</span></span><br><span class="line">    keepalive_timeout  <span class="number">65</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">#gzip  on;</span></span><br><span class="line"></span><br><span class="line">	upstream mysvr &#123;</span><br><span class="line">	<span class="comment">#weigth参数表示权值,权值越高被分配到的几率越大 </span></span><br><span class="line">	server <span class="number">192.168</span><span class="number">.33</span><span class="number">.94</span>:<span class="number">9090</span> weight=<span class="number">1</span>; </span><br><span class="line">	server <span class="number">192.168</span><span class="number">.33</span><span class="number">.95</span>:<span class="number">9090</span> weight=<span class="number">5</span>; </span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">    server &#123;</span><br><span class="line">        listen       <span class="number">8090</span>;</span><br><span class="line">        server_name  <span class="number">192.168</span><span class="number">.33</span><span class="number">.95</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">#charset koi8-r;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">#access_log  logs/host.access.log  main;</span></span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">	    proxy_pass  http://mysvr;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">#error_page  404              /404.html;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># redirect server error pages to the static page /50x.html</span></span><br><span class="line">        <span class="comment">#</span></span><br><span class="line">        error_page   <span class="number">500</span> <span class="number">502</span> <span class="number">503</span> <span class="number">504</span>  /<span class="number">50</span>x.html;</span><br><span class="line">        location = /<span class="number">50</span>x.html &#123;</span><br><span class="line">            root   html;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment"># proxy the PHP scripts to Apache listening on 127.0.0.1:80</span></span><br><span class="line">        <span class="comment">#</span></span><br><span class="line">        <span class="comment">#location ~ \.php$ &#123;</span></span><br><span class="line">        <span class="comment">#    proxy_pass   http://127.0.0.1;</span></span><br><span class="line">        <span class="comment">#&#125;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000</span></span><br><span class="line">        <span class="comment">#</span></span><br><span class="line">        <span class="comment">#location ~ \.php$ &#123;</span></span><br><span class="line">        <span class="comment">#    root           html;</span></span><br><span class="line">        <span class="comment">#    fastcgi_pass   127.0.0.1:9000;</span></span><br><span class="line">        <span class="comment">#    fastcgi_index  index.php;</span></span><br><span class="line">        <span class="comment">#    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;</span></span><br><span class="line">        <span class="comment">#    include        fastcgi_params;</span></span><br><span class="line">        <span class="comment">#&#125;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># deny access to .htaccess files, if Apache's document root</span></span><br><span class="line">        <span class="comment"># concurs with nginx's one</span></span><br><span class="line">        <span class="comment">#</span></span><br><span class="line">        <span class="comment">#location ~ /\.ht &#123;</span></span><br><span class="line">        <span class="comment">#    deny  all;</span></span><br><span class="line">        <span class="comment">#&#125;</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment"># another virtual host using mix of IP-, name-, and port-based configuration</span></span><br><span class="line">    <span class="comment">#</span></span><br><span class="line">    <span class="comment">#server &#123;</span></span><br><span class="line">    <span class="comment">#    listen       8000;</span></span><br><span class="line">    <span class="comment">#    listen       somename:8080;</span></span><br><span class="line">    <span class="comment">#    server_name  somename  alias  another.alias;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#    location / &#123;</span></span><br><span class="line">    <span class="comment">#        root   html;</span></span><br><span class="line">    <span class="comment">#        index  index.html index.htm;</span></span><br><span class="line">    <span class="comment">#    &#125;</span></span><br><span class="line">    <span class="comment">#&#125;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment"># HTTPS server</span></span><br><span class="line">    <span class="comment">#</span></span><br><span class="line">    <span class="comment">#server &#123;</span></span><br><span class="line">    <span class="comment">#    listen       443 ssl;</span></span><br><span class="line">    <span class="comment">#    server_name  localhost;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#    ssl_certificate      cert.pem;</span></span><br><span class="line">    <span class="comment">#    ssl_certificate_key  cert.key;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#    ssl_session_cache    shared:SSL:1m;</span></span><br><span class="line">    <span class="comment">#    ssl_session_timeout  5m;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#    ssl_ciphers  HIGH:!aNULL:!MD5;</span></span><br><span class="line">    <span class="comment">#    ssl_prefer_server_ciphers  on;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#    location / &#123;</span></span><br><span class="line">    <span class="comment">#        root   html;</span></span><br><span class="line">    <span class="comment">#        index  index.html index.htm;</span></span><br><span class="line">    <span class="comment">#    &#125;</span></span><br><span class="line">    <span class="comment">#&#125;</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
                 <hr>
                 
 
                 <ul class="pager">
                     
-                    <li class="previous">
-                        <a href="/2017/11/14/nginx/" data-toggle="tooltip" data-placement="top"
-                           title="Nginx配置">&larr; Previous Post</a>
-                    </li>
-                    
                     
                     <li class="next">
-                        <a href="/2017/11/12/csdn/" data-toggle="tooltip" data-placement="top"
-                           title="Markdown编辑器写Blog">Next Post &rarr;</a>
+                        <a href="/2017/11/14/docker/" data-toggle="tooltip" data-placement="top"
+                           title="Docker容器技术的基本用法">Next Post &rarr;</a>
                     </li>
                     
                 </ul>
@@ -210,7 +194,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Docker"><span class="toc-text">Docker</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Docker基本命令"><span class="toc-text">Docker基本命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#启动"><span class="toc-text">启动</span></a></li></ol></li></ol></li></ol>
+                    
                 </div>
             </div>
         </div>
