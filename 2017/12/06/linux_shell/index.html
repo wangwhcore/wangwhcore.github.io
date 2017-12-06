@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        HappyBirthDay｜Wangwh&#39;s blog
+        linux shell脚本为ssh添加ip黑名单｜Wangwh&#39;s blog
         
     </title>
 
-    <link rel="canonical" href="http://haojen.github.io/2017/12/05/HappyBrithDay/">
+    <link rel="canonical" href="http://haojen.github.io/2017/12/06/linux_shell/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -140,18 +140,18 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
-                    <h1>HappyBirthDay</h1>
+                    <h1>linux shell脚本为ssh添加ip黑名单</h1>
                     
                     <span class="meta">
                          作者 Bill Wang
                         <span>
-                          日期 2017-12-05
+                          日期 2017-12-06
                          </span>
                     </span>
                     <div class="tags text-center">
                         
-                        <a class="tag" href="/tags/#my"
-                           title="my">my</a>
+                        <a class="tag" href="/tags/#linux,shell,secure"
+                           title="linux,shell,secure">linux,shell,secure</a>
                         
                     </div>
                 </div>
@@ -160,7 +160,7 @@
     </div>
     <div class="post-title-haojen">
         <span>
-            HappyBirthDay
+            linux shell脚本为ssh添加ip黑名单
         </span>
     </div>
 </header>
@@ -171,29 +171,21 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <h1 id="HappyBirthDay"><a href="#HappyBirthDay" class="headerlink" title="HappyBirthDay"></a>HappyBirthDay</h1><ol>
-<li>生日快乐</li>
-<li>没有感言</li>
-<li>好好生活</li>
-<li>多读书、少怄气</li>
-<li>过得洒脱点</li>
-<li>大宝三岁半、小宝一岁了</li>
-</ol>
+                <h1 id="linux-shell脚本为ssh添加ip黑名单"><a href="#linux-shell脚本为ssh添加ip黑名单" class="headerlink" title="linux shell脚本为ssh添加ip黑名单"></a>linux shell脚本为ssh添加ip黑名单</h1><p>方法：读取/var/log/secure，查找关键字 Failed,从这些行中提取IP地址，如果次数达到5次则将该IP写到 /etc/hosts.deny中. 利用linux的hosts机制屏蔽单一IP的暴力破解。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">SDec  <span class="number">1</span> <span class="number">08</span>:<span class="number">51</span>:<span class="number">04</span> iZj6ci66ajtrdgi2s2kch1Z sshd[<span class="number">25836</span>]: PAM <span class="number">4</span> more authentication failures; logname= uid=<span class="number">0</span> euid=<span class="number">0</span> tty=ssh ruser= rhost=<span class="number">220.162</span><span class="number">.239</span><span class="number">.141</span>  user=root</span><br><span class="line">Dec  <span class="number">1</span> <span class="number">08</span>:<span class="number">51</span>:<span class="number">04</span> iZj6ci66ajtrdgi2s2kch1Z sshd[<span class="number">25836</span>]: PAM service(sshd) ignoring max retries; <span class="number">5</span> &gt; <span class="number">3</span></span><br><span class="line">Dec  <span class="number">1</span> <span class="number">08</span>:<span class="number">51</span>:<span class="number">35</span> iZj6ci66ajtrdgi2s2kch1Z sshd[<span class="number">25847</span>]: pam_unix(sshd:auth): authentication failure; logname= uid=<span class="number">0</span> euid=<span class="number">0</span> tty=ssh ruser= rhost=<span class="number">220.162</span><span class="number">.239</span><span class="number">.141</span>  user=root</span><br><span class="line">Dec  <span class="number">1</span> <span class="number">08</span>:<span class="number">51</span>:<span class="number">35</span> iZj6ci66ajtrdgi2s2kch1Z sshd[<span class="number">25847</span>]: pam_succeed_if(sshd:auth): requirement <span class="string">"uid &gt;= 1000"</span> <span class="keyword">not</span> met by user <span class="string">"root"</span></span><br><span class="line">Dec  <span class="number">1</span> <span class="number">08</span>:<span class="number">51</span>:<span class="number">36</span> iZj6ci66ajtrdgi2s2kch1Z sshd[<span class="number">25847</span>]: Failed password <span class="keyword">for</span> root <span class="keyword">from</span> <span class="number">220.162</span><span class="number">.239</span><span class="number">.141</span> port <span class="number">2599</span> ssh2</span><br><span class="line">Dec  <span class="number">1</span> <span class="number">08</span>:<span class="number">51</span>:<span class="number">37</span> iZj6ci66ajtrdgi2s2kch1Z sshd[<span class="number">25847</span>]: pam_succeed_if(sshd:auth): requirement <span class="string">"uid &gt;= 1000"</span> <span class="keyword">not</span> met by user <span class="string">"root"</span></span><br><span class="line">Dec  <span class="number">1</span> <span class="number">08</span>:<span class="number">51</span>:<span class="number">39</span> iZj6ci66ajtrdgi2s2kch1Z sshd[<span class="number">25847</span>]: Failed password <span class="keyword">for</span> root <span class="keyword">from</span> <span class="number">220.162</span><span class="number">.239</span><span class="number">.141</span> port <span class="number">2599</span> ssh2</span><br><span class="line">Dec  <span class="number">1</span> <span class="number">08</span>:<span class="number">51</span>:<span class="number">39</span> iZj6ci66ajtrdgi2s2kch1Z sshd[<span class="number">25847</span>]: pam_succeed_if(sshd:auth): requirement <span class="string">"uid &gt;= 1000"</span> <span class="keyword">not</span> met by user <span class="string">"root"</span></span><br><span class="line">Dec  <span class="number">1</span> <span class="number">08</span>:<span class="number">51</span>:<span class="number">41</span> iZj6ci66ajtrdgi2s2kch1Z sshd[<span class="number">25847</span>]: Failed password <span class="keyword">for</span> root <span class="keyword">from</span> <span class="number">220.162</span><span class="number">.239</span><span class="number">.141</span> port <span class="number">2599</span> ssh2</span><br><span class="line">Dec  <span class="number">1</span> <span class="number">08</span>:<span class="number">51</span>:<span class="number">41</span> iZj6ci66ajtrdgi2s2kch1Z sshd[<span class="number">25847</span>]: pam_succeed_if(sshd:auth): requirement <span class="string">"uid &gt;= 1000"</span> <span class="keyword">not</span> met by user <span class="string">"root"</span></span><br><span class="line">Dec  <span class="number">1</span> <span class="number">08</span>:<span class="number">51</span>:<span class="number">43</span> iZj6ci66ajtrdgi2s2kch1Z sshd[<span class="number">25847</span>]: Failed password <span class="keyword">for</span> root <span class="keyword">from</span> <span class="number">220.162</span><span class="number">.239</span><span class="number">.141</span> port <span class="number">2599</span> ssh2</span><br><span class="line">Dec  <span class="number">1</span> <span class="number">08</span>:<span class="number">51</span>:<span class="number">43</span> iZj6ci66ajtrdgi2s2kch1Z sshd[<span class="number">25847</span>]: pam_succeed_if(sshd:auth): requirement <span class="string">"uid &gt;= 1000"</span> <span class="keyword">not</span> met by user <span class="string">"root"</span></span><br><span class="line">Dec  <span class="number">1</span> <span class="number">08</span>:<span class="number">51</span>:<span class="number">46</span> iZj6ci66ajtrdgi2s2kch1Z sshd[<span class="number">25847</span>]: Failed password <span class="keyword">for</span> root <span class="keyword">from</span> <span class="number">220.162</span><span class="number">.239</span><span class="number">.141</span> port <span class="number">2599</span> ssh2</span><br><span class="line"></span><br><span class="line">``` </span><br><span class="line">从这些行中提取IP地址，如果次数达到<span class="number">5</span>次则将该IP写到 /etc/hosts.deny中。：</span><br><span class="line"></span><br><span class="line"><span class="comment">## ip_secure.sh</span></span><br><span class="line">使用vim编辑ip_secure.sh：</span><br><span class="line">``` python</span><br><span class="line">cat /var/log/secure|awk <span class="string">'/Failed/&#123;print $(NF-3)&#125;'</span>|sort|uniq -c|awk <span class="string">'&#123;print $2"="$1;&#125;'</span> &gt; /root/black.txt</span><br><span class="line">DEFINE=<span class="string">"5"</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> `cat  /root/black.txt`</span><br><span class="line">do</span><br><span class="line">    IP=`echo | awk <span class="string">'&#123;split("'</span>$&#123;i&#125;<span class="string">'", array, "=");print array[1]&#125;'</span>`  </span><br><span class="line">    NUM=`echo | awk <span class="string">'&#123;split("'</span>$&#123;i&#125;<span class="string">'", array, "=");print array[2]&#125;'</span>` </span><br><span class="line">    echo ========== $NUM</span><br><span class="line">    <span class="keyword">if</span> [ $NUM -gt $DEFINE ];then</span><br><span class="line">      echo <span class="string">"------------"</span></span><br><span class="line">  　　grep $IP /etc/hosts.deny &gt; /dev/null</span><br><span class="line">      if [ $? -gt 0 ];then</span><br><span class="line">          echo <span class="string">"sshd:$IP:deny"</span> &gt;&gt; /etc/hosts.deny</span><br><span class="line">      fi</span><br><span class="line">    fi</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+<p>单独执行一次，可以到/etc/hosts.deny 文件中检查是否成功</p>
+<p>最后将secure_ssh.sh脚本放入cron计划任务，每1分钟执行一次。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># crontab -e</span></span><br><span class="line">*/<span class="number">1</span> * * * *  sh /root/secure_ssh.sh</span><br></pre></td></tr></table></figure>
 
                 <hr>
                 
 
                 <ul class="pager">
                     
-                    <li class="previous">
-                        <a href="/2017/12/06/linux_shell/" data-toggle="tooltip" data-placement="top"
-                           title="linux shell脚本为ssh添加ip黑名单">&larr; Previous Post</a>
-                    </li>
-                    
                     
                     <li class="next">
-                        <a href="/2017/11/29/iphone_ios/" data-toggle="tooltip" data-placement="top"
-                           title="禁止iphone系统自动更新">Next Post &rarr;</a>
+                        <a href="/2017/12/05/HappyBrithDay/" data-toggle="tooltip" data-placement="top"
+                           title="HappyBirthDay">Next Post &rarr;</a>
                     </li>
                     
                 </ul>
@@ -209,7 +201,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HappyBirthDay"><span class="toc-text">HappyBirthDay</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#linux-shell脚本为ssh添加ip黑名单"><span class="toc-text">linux shell脚本为ssh添加ip黑名单</span></a></li></ol>
                 </div>
             </div>
         </div>
@@ -231,8 +223,8 @@
                     </h5>
                     <div class="tags">
                         
-                        <a class="tag" href="/tags/#my"
-                           title="my">my</a>
+                        <a class="tag" href="/tags/#linux,shell,secure"
+                           title="linux,shell,secure">linux,shell,secure</a>
                         
                     </div>
                 </section>
