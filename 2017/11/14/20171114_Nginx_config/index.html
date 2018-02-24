@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        年过四十 人生半局｜极客电工
+        Nginx配置｜极客电工
         
     </title>
 
-    <link rel="canonical" href="http://haojen.github.io/2017/12/18/20171218_wenzhang_zhuanzai/">
+    <link rel="canonical" href="http://haojen.github.io/2017/11/14/20171114_Nginx_config/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -140,18 +140,18 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
-                    <h1>年过四十 人生半局</h1>
+                    <h1>Nginx配置</h1>
                     
                     <span class="meta">
                          作者 Bill Wang
                         <span>
-                          日期 2017-12-18
+                          日期 2017-11-14
                          </span>
                     </span>
                     <div class="tags text-center">
                         
-                        <a class="tag" href="/tags/#age"
-                           title="age">age</a>
+                        <a class="tag" href="/tags/#docker"
+                           title="docker">docker</a>
                         
                     </div>
                 </div>
@@ -160,7 +160,7 @@
     </div>
     <div class="post-title-haojen">
         <span>
-            年过四十 人生半局
+            Nginx配置
         </span>
     </div>
 </header>
@@ -171,66 +171,7 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <blockquote>
-<p><strong>来源：</strong>微信公众号腰线　文/克里斯蒂娜酱</p>
-</blockquote>
-<p>12月10日上午，程序员欧某新从中兴通讯的大楼顶上一跃而下，留下四位老人和一对年幼的儿女，结束了42岁的生命。</p>
-<p>　　他的妻子丁某回忆说：“接到电话，说我老公跳楼了，我急忙打车赶到现场，看见我家老公瘫倒在中兴研发大楼办公楼的台阶上。周边到处都是血，我瞬间瘫坐在地上。”</p>
-<p>　　不久前，作为中兴研发负责人的欧某，刚被领导谈话，公司大规模裁员，要求他主动离职，并回收股权。</p>
-<p>　　他跳楼当天上午9点接到公司电话，让他去一趟，他出门前对妻子说的最后一句话是：“领导要我去公司”，“我们公司有内部矛盾，我很可能成为牺牲品”。</p>
-<p>　　3个小时后，欧某新从研发中心大楼一跃而下。</p>
-<hr>
-<p>　　欧某新出生湖南一个农村家庭，从小学习成绩优秀，本科考入北航，硕士南开，在华为工作8年，又在中兴担任研发负责人6年。</p>
-<p>　　他的前半生，是典型的寒门子弟通过自己的勤奋，成为中产阶级，改变贫穷命运的故事。</p>
-<p>　　如果不是这场死亡，他可能和千千万万个人到中年，事业小有成就的男人一样，过着表面上妻贤子孝的幸福生活。</p>
-<p>　　可是，这幸福背后，是压力，难以喘息；</p>
-<p>　　这幸福背后，是薄冰，一击即碎。</p>
-<p>　　他的后半生，除了坠楼的那声巨响，一切化为烟云。</p>
-<p>　　我邀请了好友IT业资深猎头克里斯蒂娜酱，写下了这篇文章，对欧某的悲剧，是一份深度剖析，对万千人到中年的生者，是一次善意提醒。</p>
-<p>###01</p>
-<p>　　最近中兴42岁程序员被辞退因此坠楼轻生的事情如一道惊雷，在原本平静的通信IT圈炸开了锅。</p>
-<p>　　评论众说纷纭，却多以咒骂企业负心资本家冷血为主，间或有人提到要不断学习提升自身修养，提高自我的不可替代性。</p>
-<p>　　我来说点真话，我知道我说这些话会被喷，但我还是决定说点真话。逝者已逝，但活着的人必须明白事情的残酷真相，并想一些应对方法。</p>
-<p>　　对于一个处在衰落期的行业，尤其是一个在快速爆发之后逐渐衰落的行业，只有一个词可以形容在这个行业里面的所有人：覆巢之下，焉有完卵。</p>
-<p>　　很多人都知道我现在服务的是互联网企业，但其实我2014年时的大客户是华为，正因为如此，我见证了通信行业最后的繁荣。</p>
-<p>　　那一年我在华为一共出了40个offer，了解行业的人都知道这是难以想象的，但这完全是当时的行业现状导致的：全行业只有中资企业在招聘，而华为是里面最大的一家。</p>
-<p>　　当时以IBM、诺基亚、爱立信为首的外资企业已经在全世界范围内开始裁员了，而中国当时是裁员的重灾区。很多人加入华为不是因为喜欢华为，完全是因为没有别的地方可去。</p>
-<p>　　可是到了2017年，所有通信行业都进入了寒冬模式。</p>
-<p>　　如今通信行业的利润已经比纸还薄，2014年1个项目产生的销售额现在需要5/6个项目顶着，原本以为5G到来可以续命一波，可是前两天我得到的内部信息是5G正式投入商用起码要到2021年。而与此同时，一个公司十几万人都在张着嘴等着吃饭啊！</p>
-<p>　　实话实说中兴还是保全了最后的尊严的，离职的N+1补偿给了，股票也回购了，至于没有按照4块钱回购只有2块，这太正常了：一个公司盈利不好，股价也是会跌的啊，你买股票也得按市场价格来走，不能永远惦记着最高点。</p>
-<p>###02</p>
-<p>　　40岁之后难过早就不是什么新鲜事儿了，只不过是没出跳楼这么惨烈的事情大家根本不关注而已：我2014年和通信行业接触的时候，就有这么几个案例：</p>
-<p>　　1、一个外资的中国Sales总监，被公司裁了（毕竟国内市场没的卖了销售也没留着的必要了），因为超过45岁华为也不要，没办法就失业了。先是自己开了个烤肉馆，结果天天招待自己兄弟，半年就把自己的烤肉馆吃倒闭了。然后又凑了点钱投资，也赔的血本无归。现在在家接送孩子上学，偶尔给别人做做行业顾问，收入不确定。幸亏房子买得早，贷款都还完了。</p>
-<p>　　2、一个运营商的省级分公司负责人，被架空了所以想跳槽，给了个offer不满意，没去，自己出来创业，以为靠着自己人脉能有口饭吃，结果没搞起来。幸亏自己老婆手艺好，卖家里自制的小点心，开了个网店，有点收入，经常看他在朋友圈里发她老婆的店铺信息。（南方人自主创业还是能吃苦，这点真的佩服）</p>
-<p>　　3、一个腾讯出来的总监，40岁左右，高薪去了华为呆了半年，因为企业文化等等各种原因又被干了出来，着急得天天睡不着觉问我咋办，我说“你有啥好担心的。”他说“我还有两套房子贷款要还呢，一个月就要还3万多”，我说“你卖一套把另一套贷款还上就行了”。</p>
-<p>　　如果一个行业光景好，你哪怕在一家地方被不公平地对待了，你出去也能再找个地方工作。正是因为一个行业不行了，你才哪怕哀求都希望能留在公司，因为你知道你出去就没有别的地方可去，而你上有老下有小，才会绝望到走上绝路。</p>
-<p>　　而且我也不同意“奉献青春”这种说法。</p>
-<p>　　谁也不是雷锋，你在一个公司工作，是因为这里给了你相对不错的待遇和发展空间，我从来没见过谁拿着5000块钱干着基础工作还能在通信行业里干一辈子的。</p>
-<p>　　事实上，10年前的通信就和今天的互联网一样，在当时可以说是如日中天。华为中兴势头迅猛的时候给员工发12个月的奖金，这不是胡乱来的。你一毕业拿着高于同龄大学生两三倍的工资，30出头就年薪百万，这钱不是白给的。多少华为中兴人30不到就买了房，这难道不是得利于行业本身么？不要说什么你们也加班熬夜，医生、警察、媒体行业，哪个年轻人没加班熬夜过？你不拼？你不拼，不仅40岁要被辞退，30岁还买不了房。</p>
-<p>　　你们享受了行业上升期带来的各种红利，就要为行业下行期的阵痛做好准备。而这个世界上是根本没有一种行业是又能给你高于同龄人两三倍的起薪又能给快速上升空间公司氛围一团和气还能让你快乐工作到60岁的。</p>
-<p>###03</p>
-<p>　　而你如果问我怎么解决这个问题，我实话实说：没有办法。</p>
-<p>　　别听什么不断学习新知识，那套对30岁还可能有用，到了40岁，你再怎么学，竞争力也比不过25岁应届毕业生。</p>
-<p>　　你选择的行业就是一个快进快出的行业，这个特点是不会根据你本身的努力改变的。为什么互联网大厂那么多38岁以上的总监都自己出去创业了？你以为真的每个人都是“燕雀安知鸿鹄之志”？</p>
-<p>　　互联网创业成本比通信低，这是稍微作为缓冲垫的一点，但这个红利很快也要没有了。</p>
-<p>　　所以，对于通信和互联网行业的人，我真的有这么几条建议：</p>
-<p>　　1、认清现实。</p>
-<p>　　很多人对于自己所处的行业是盲目乐观的，但现状是，通信行业在5G出来之前只会一年比一年艰难，5G出来之后会好一阵，但也到不了巅峰时期的状态了。而互联网的基础红利期也已经过去了，后面的竞争会越来越激烈的。</p>
-<p>　　2、千万别让老婆赋闲在家，谨慎生二胎。</p>
-<p>　　婚姻的一大作用是抵御风险，所以不要对婚姻进行自我阉割。有孩子了该让老人帮忙让老人帮忙，该请保姆请保姆，不要牺牲另一半的事业（至少是工作），否则这就意味着你把家庭所有的重担都扛到你自己身上，你想想你拿什么为你40岁之后4个老人+2个大人+孩子的生活负责。</p>
-<p>　　如果老婆赋闲，不要忘记交社保。</p>
-<p>　　而且我真的不理解为什么IT圈那么喜欢生二胎，坦白讲通信互联网很多都是穷孩子出身，你们的上一辈明明没什么家底，你们属于一旦没工作最容易被打垮的那一部分中产阶级，却偏偏要给自己加最多的压力。</p>
-<p>　　3、尽早理财，谨慎投资。</p>
-<p>　　很多人的现状是有工作的时候闷头工作根本不管理财的事儿，一没工作了一着急就开始胡乱投资，指望靠投资翻本，这是完全错误的，很多人的投资水平根本没到你们能把投资当作工作来做的地步，钱扔出去基本就是打水漂。</p>
-<p>　　相反，理财的观念才是应该尽早建立起来的，其实每一代都有一个除了工作之外发家致富的路径，90年的股市，00年的房子，10年的比特币，哪怕你没赶上最好的，买点茅台腾讯也是好的。</p>
-<p>　　腾讯很多人最后就是靠股票撑过中年危机的。</p>
-<p>　　这样的机会以后不会有这么多了，但是留心周围，总是会有机会的。如果要进行投资，最好把钱交给专业的机构，成功率会比你自己乱投资要高很多。</p>
-<p>　　4、管理欲望</p>
-<p>　　这点其实是很多人都没有意识到的。人很多时候绝望并不是因为走投无路，而是因为对未来的幻灭。</p>
-<p>　　其实不管你在哪个行业，这年头靠着工作实现财务自由都很难了。那些曾经发了奖金就换的豪车，大概率以后还是要还回去的。</p>
-<p>　　其实人这一生怎么过都是过，不是一定要有大房子开豪车把孩子送出国才算是完满的人生。</p>
-<p>　　我知道在这个话题下说这些话会显得我消费人血馒头，但这些话我不说，10年后觉得幻灭绝望的人会更多。</p>
-<p>　　我宁愿你们现在骂我，以后遇到事情能多想一步早做准备，不要摔得太惨。</p>
+                <h1 id="Nginx配置"><a href="#Nginx配置" class="headerlink" title="Nginx配置"></a>Nginx配置</h1><p>Nginx基本配置–模板<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">#user  nobody;</span></span><br><span class="line"><span class="comment">#运行用户</span></span><br><span class="line">user nginx nginx;</span><br><span class="line"><span class="comment">#启动进程</span></span><br><span class="line">worker_processes  <span class="number">2</span>;</span><br><span class="line"><span class="comment">#全局错误日志及PID文件</span></span><br><span class="line"><span class="comment">#error_log  logs/error.log;</span></span><br><span class="line"><span class="comment">#error_log  logs/error.log  notice;</span></span><br><span class="line"><span class="comment">#error_log  logs/error.log  info;</span></span><br><span class="line"></span><br><span class="line">error_log  logs/error.log  notice;</span><br><span class="line">pid        logs/nginx.pid;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#pid        logs/nginx.pid;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">events &#123;</span><br><span class="line">    worker_connections  <span class="number">1024</span>;<span class="comment">#所以nginx支持的总连接数就等于worker_processes * worker_connections </span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">http &#123;</span><br><span class="line">    include       mime.types;<span class="comment">#这个是说nginx支持哪些多媒体类型，可以到conf/mime.types查看支持哪些多媒体 </span></span><br><span class="line">    default_type  application/octet-stream;<span class="comment">#默认的数据类型 </span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '</span></span><br><span class="line">    <span class="comment">#                  '$status $body_bytes_sent "$http_referer" '</span></span><br><span class="line">    <span class="comment">#                  '"$http_user_agent" "$http_x_forwarded_for"';</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#access_log  logs/access.log  main;</span></span><br><span class="line"></span><br><span class="line">    sendfile        on;</span><br><span class="line">    <span class="comment">#tcp_nopush     on;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#keepalive_timeout  0;</span></span><br><span class="line">    keepalive_timeout  <span class="number">65</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">#gzip  on;</span></span><br><span class="line"></span><br><span class="line">	upstream mysvr &#123;</span><br><span class="line">	<span class="comment">#weigth参数表示权值,权值越高被分配到的几率越大 </span></span><br><span class="line">	server <span class="number">192.168</span><span class="number">.33</span><span class="number">.94</span>:<span class="number">9090</span> weight=<span class="number">1</span>; </span><br><span class="line">	server <span class="number">192.168</span><span class="number">.33</span><span class="number">.95</span>:<span class="number">9090</span> weight=<span class="number">5</span>; </span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">    server &#123;</span><br><span class="line">        listen       <span class="number">8090</span>;</span><br><span class="line">        server_name  <span class="number">192.168</span><span class="number">.33</span><span class="number">.95</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">#charset koi8-r;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">#access_log  logs/host.access.log  main;</span></span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">	    proxy_pass  http://mysvr;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">#error_page  404              /404.html;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># redirect server error pages to the static page /50x.html</span></span><br><span class="line">        <span class="comment">#</span></span><br><span class="line">        error_page   <span class="number">500</span> <span class="number">502</span> <span class="number">503</span> <span class="number">504</span>  /<span class="number">50</span>x.html;</span><br><span class="line">        location = /<span class="number">50</span>x.html &#123;</span><br><span class="line">            root   html;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment"># proxy the PHP scripts to Apache listening on 127.0.0.1:80</span></span><br><span class="line">        <span class="comment">#</span></span><br><span class="line">        <span class="comment">#location ~ \.php$ &#123;</span></span><br><span class="line">        <span class="comment">#    proxy_pass   http://127.0.0.1;</span></span><br><span class="line">        <span class="comment">#&#125;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000</span></span><br><span class="line">        <span class="comment">#</span></span><br><span class="line">        <span class="comment">#location ~ \.php$ &#123;</span></span><br><span class="line">        <span class="comment">#    root           html;</span></span><br><span class="line">        <span class="comment">#    fastcgi_pass   127.0.0.1:9000;</span></span><br><span class="line">        <span class="comment">#    fastcgi_index  index.php;</span></span><br><span class="line">        <span class="comment">#    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;</span></span><br><span class="line">        <span class="comment">#    include        fastcgi_params;</span></span><br><span class="line">        <span class="comment">#&#125;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># deny access to .htaccess files, if Apache's document root</span></span><br><span class="line">        <span class="comment"># concurs with nginx's one</span></span><br><span class="line">        <span class="comment">#</span></span><br><span class="line">        <span class="comment">#location ~ /\.ht &#123;</span></span><br><span class="line">        <span class="comment">#    deny  all;</span></span><br><span class="line">        <span class="comment">#&#125;</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment"># another virtual host using mix of IP-, name-, and port-based configuration</span></span><br><span class="line">    <span class="comment">#</span></span><br><span class="line">    <span class="comment">#server &#123;</span></span><br><span class="line">    <span class="comment">#    listen       8000;</span></span><br><span class="line">    <span class="comment">#    listen       somename:8080;</span></span><br><span class="line">    <span class="comment">#    server_name  somename  alias  another.alias;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#    location / &#123;</span></span><br><span class="line">    <span class="comment">#        root   html;</span></span><br><span class="line">    <span class="comment">#        index  index.html index.htm;</span></span><br><span class="line">    <span class="comment">#    &#125;</span></span><br><span class="line">    <span class="comment">#&#125;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment"># HTTPS server</span></span><br><span class="line">    <span class="comment">#</span></span><br><span class="line">    <span class="comment">#server &#123;</span></span><br><span class="line">    <span class="comment">#    listen       443 ssl;</span></span><br><span class="line">    <span class="comment">#    server_name  localhost;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#    ssl_certificate      cert.pem;</span></span><br><span class="line">    <span class="comment">#    ssl_certificate_key  cert.key;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#    ssl_session_cache    shared:SSL:1m;</span></span><br><span class="line">    <span class="comment">#    ssl_session_timeout  5m;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#    ssl_ciphers  HIGH:!aNULL:!MD5;</span></span><br><span class="line">    <span class="comment">#    ssl_prefer_server_ciphers  on;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#    location / &#123;</span></span><br><span class="line">    <span class="comment">#        root   html;</span></span><br><span class="line">    <span class="comment">#        index  index.html index.htm;</span></span><br><span class="line">    <span class="comment">#    &#125;</span></span><br><span class="line">    <span class="comment">#&#125;</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
                 <hr>
                 
@@ -238,14 +179,14 @@
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2018/01/14/20180114_Keras_Python/" data-toggle="tooltip" data-placement="top"
-                           title="Keras配置">&larr; Previous Post</a>
+                        <a href="/2017/11/28/Chanpinpeizhi/" data-toggle="tooltip" data-placement="top"
+                           title="产品规划以及文档建设">&larr; Previous Post</a>
                     </li>
                     
                     
                     <li class="next">
-                        <a href="/2017/12/06/linux_shell/" data-toggle="tooltip" data-placement="top"
-                           title="linux shell脚本为ssh添加ip黑名单">Next Post &rarr;</a>
+                        <a href="/2017/11/14/nginx/" data-toggle="tooltip" data-placement="top"
+                           title="Nginx配置">Next Post &rarr;</a>
                     </li>
                     
                 </ul>
@@ -280,7 +221,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Nginx配置"><span class="toc-text">Nginx配置</span></a></li></ol>
                 </div>
             </div>
         </div>
@@ -302,8 +243,8 @@
                     </h5>
                     <div class="tags">
                         
-                        <a class="tag" href="/tags/#age"
-                           title="age">age</a>
+                        <a class="tag" href="/tags/#docker"
+                           title="docker">docker</a>
                         
                     </div>
                 </section>
